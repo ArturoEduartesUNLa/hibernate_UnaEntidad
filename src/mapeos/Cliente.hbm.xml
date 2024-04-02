@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Cliente" table="cliente">
+		<id column="idCliente" name="idCliente">
+			<generator class="identity"> </generator>
+		</id>
+		<property column="apellido" name="apellido" type="string"></property>
+		<property column="nombre" name="nombre" type="string"></property>
+		<property column="dni" name="dni" type="int"></property>
+		<property column="fechaDeNacimiento" name="fechaDeNacimiento" type="LocalDate"></property>
+		<property column="baja" name="baja" type="boolean"></property>
+	</class>
+</hibernate-mapping>
+
+
