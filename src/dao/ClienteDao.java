@@ -32,8 +32,7 @@ public class ClienteDao {
 			iniciaOperacion();
 			id = Integer.parseInt(session.save(objeto).toString());
 			tx.commit();
-			;
-
+			
 		} catch (HibernateException he) {
 			manejaExcepcion(he);
 		} finally {
@@ -103,6 +102,7 @@ public class ClienteDao {
 		} finally {
 			session.close();
 		}
-
+		return lista;
 	}
+	
 }
