@@ -17,13 +17,13 @@ public class Cliente {
 	}
 
 	
-	public Cliente(String apellido, String nombre, int dni, LocalDate fechaDeNacimiento, boolean baja) {
+	public Cliente(String apellido, String nombre, int dni, LocalDate fechaDeNacimiento) {
 		super();
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.dni = dni;
 		this.fechaDeNacimiento = fechaDeNacimiento;
-		this.baja = baja;
+		this.baja = false;
 	}
 
 
