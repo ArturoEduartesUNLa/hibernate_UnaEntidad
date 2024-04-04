@@ -18,7 +18,7 @@ public class ClienteABM {
 
 	}
 
-	public int agregar(String apellido, String nombre, int dni, LocalDate fechaDeNacimiento) throws Exception {
+	public long agregar(String apellido, String nombre, int dni, LocalDate fechaDeNacimiento) throws Exception {
 		Cliente cliente = traer(dni);
 
 		if (cliente != null) {
