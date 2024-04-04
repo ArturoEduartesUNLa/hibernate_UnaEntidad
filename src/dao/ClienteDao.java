@@ -30,7 +30,8 @@ public class ClienteDao {
 		try {
 
 			iniciaOperacion();
-			id = Integer.parseInt(session.save(objeto).toString());
+			// sentencia original: id = Integer.parseInt(session.save(objeto).toString());
+			id = (int) session.save(objeto); // cast mas simple
 			tx.commit();
 			
 		} catch (HibernateException he) {
