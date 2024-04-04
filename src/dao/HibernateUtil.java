@@ -1,3 +1,7 @@
+/* Consultas:
+ * ¿ se debe agregar un constructor privado para ocultar el constructor publico implicito?
+ */
+
 package dao;
 
 import org.hibernate.HibernateException;
@@ -14,7 +18,8 @@ public class HibernateUtil {
 		try {
 			if (sessionFactory == null) {
 				StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
-						.configure("mapeos/hibernate.cfg.xml").build();
+						.configure("mapeos/hibernate.cfg.xml")
+						.build();
 				Metadata metaData = new MetadataSources().buildMetadata(standardRegistry);
 				sessionFactory = metaData.buildSessionFactory();
 			}
