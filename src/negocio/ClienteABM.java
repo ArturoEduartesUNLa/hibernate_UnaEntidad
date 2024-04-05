@@ -45,7 +45,7 @@ public class ClienteABM {
 	public void eliminar(long idCliente) throws Exception {
 
 		Cliente c = null;
-		if (traer(idCliente) == null) {
+		if ((c = traer(idCliente)) == null) {
 			throw new Exception("Id no existe en BD: " + idCliente);
 		}
 		dao.eliminar(c);
