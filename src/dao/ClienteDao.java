@@ -25,13 +25,17 @@ public class ClienteDao {
 		throw new HibernateException("Error en la capa de Acceso a Datos", he);
 	}
 
-	public int agregar(Cliente objeto) {
-		int id = 0;
+	/*
+	 * se modifica el tipo de retorno a long porque es el tipo 
+	 * devuelto por el metodo save de la clase Session
+	 */
+	public long agregar(Cliente objeto) { 
+		long id = 0;
 		try {
 
 			iniciaOperacion();
 			// sentencia original: id = Integer.parseInt(session.save(objeto).toString());
-			id = (int) session.save(objeto); // cast mas simple
+			id = (long) session.save(objeto); // cast mas simple
 			tx.commit();
 			
 		} catch (HibernateException he) {
