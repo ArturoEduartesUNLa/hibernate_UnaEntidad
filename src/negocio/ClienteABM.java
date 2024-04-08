@@ -32,13 +32,10 @@ public class ClienteABM {
 	}
 
 	public void modificar(Cliente c) throws Exception {
-		/*
-		 * si se actualiza dni, previamente verificar que no exista el DNI en la
-		 * database
-		 */
-		if (traer(c.getDni()) != null) {
+
+		// si se actualiza dni, verificar que no exista otro igual en la database
+		if (traer(c.getIdCliente()).getDni() != c.getDni() && traer(c.getDni()) != null)
 			throw new Exception("Ya existe DNI: " + c.getDni());
-		}
 		dao.actualizar(c);
 	}
 
